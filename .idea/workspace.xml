@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/Documents/cursera/scala/example" value="1459512774000" />
+        <entry key="$USER_HOME$/Documents/cursera/scala/forcomp" value="1462309612000" />
+        <entry key="$USER_HOME$/Documents/cursera/scala/funsets" value="1462312640000" />
+        <entry key="$USER_HOME$/Documents/cursera/scala/objsets" value="1462315646000" />
+        <entry key="$USER_HOME$/Documents/cursera/scala/patmat" value="1462372864000" />
+        <entry key="$USER_HOME$/Documents/cursera/scala/recfun" value="1462365530000" />
+        <entry key="$USER_HOME$/Documents/cursera/spark/example" value="1489426822000" />
+        <entry key="$USER_HOME$/Documents/cursera/spark/wikipedia" value="1489512222000" />
+        <entry key="$USER_HOME$/Documents/cursera/stackoverflow" value="1489929080000" />
+        <entry key="$USER_HOME$/entorno/workspace/fpinscala" value="1474929235000" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Documents/github-alvNa/demo" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/github-alvNa/scala" value="PREVIEW" />
+        <entry key="$USER_HOME$/code/MasteringAkka_Code/chapter1/initial-example-app" value="PREVIEW" />
+        <entry key="$USER_HOME$/code/MasteringAkka_Code/chapter4/bookstore-app-complete" value="PREVIEW" />
+        <entry key="$USER_HOME$/code/fpinscala" value="PREVIEW" />
+        <entry key="$USER_HOME$/code/lightbend/LAC-Fundamentals-v1/exercises/scala" value="PREVIEW" />
+        <entry key="$USER_HOME$/code/sbt" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="intInjectionMapping">
+      <map>
+        <entry key="xml" value="XML" />
+      </map>
+    </option>
+  </component>
+</project>
