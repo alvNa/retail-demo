@@ -2,10 +2,7 @@ package com.inditex.demo.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -20,8 +17,9 @@ import java.time.LocalDateTime;
 @Table(name = "PRICES")
 public class Price implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "PRICE_ID")
-    private Long priceId;
+    private Long id;
 
     @Column(name = "PRODUCT_ID")
     private Long productId;

@@ -1,35 +1,31 @@
 package com.inditex.demo.service;
 
 import com.inditex.demo.converter.PriceConverter;
-import com.inditex.demo.converter.PriceConverterImpl;
 import com.inditex.demo.model.Price;
 import com.inditex.demo.repository.PriceRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-//@SpringJUnitConfig(classes = {PriceConverterImpl.class})
-@SpringBootTest//(classes= TestConfig.class)
+@SpringBootTest
 public class PriceServiceTest {
     @MockBean
     private PriceRepository priceRepository;
 
-   @Autowired
+    @Autowired
     private PriceConverter priceConverter;
 
     @Autowired
@@ -51,11 +47,11 @@ public class PriceServiceTest {
         price.setStartDate(dateFrom);
         price.setEndDate(dateTo);
 
-        when(priceRepository.findByFilter(productId, brandId, date)).thenReturn(price);
+        when(priceRepository.findByFilter(productId, brandId, date)).thenReturn(Optional.of(price));
 
-        var result = priceService.find(productId,brandId,date);
-        Assertions.assertNotNull(result);
-        Assertions.assertEquals(result.getPrice(), price.getPrice());
-        Assertions.assertEquals(result.getStartDate(), price.getStartDate());
+        var maybeResult = priceService.find(productId,brandId,date);
+        Assertions.assertTrue(maybeResult.isPresent());
+        Assertions.assertEquals(maybeResult.get().getPrice(), price.getPrice());
+        Assertions.assertEquals(maybeResult.get().getStartDate(), price.getStartDate());
     }
 }

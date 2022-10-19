@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +20,8 @@ public class PriceService {
     @Autowired
     private PriceConverter priceConverter;
 
-    public PriceDto find(Long productId, Long brandId, LocalDateTime date) {
-        var price = priceRepository.findByFilter(productId, brandId, date);
-        return priceConverter.toDto(price);
+    public Optional<PriceDto> find(Long productId, Long brandId, LocalDateTime date) {
+        var maybePrice = priceRepository.findByFilter(productId, brandId, date);
+        return maybePrice.map(price -> priceConverter.toDto(price));
     }
 }

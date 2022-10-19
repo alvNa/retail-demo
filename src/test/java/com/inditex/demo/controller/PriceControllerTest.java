@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static com.inditex.demo.controller.PriceController.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -55,7 +56,8 @@ public class PriceControllerTest {
                 .endDate(dateTo)
                 .build();
 
-        when(priceService.find(eq(productId), eq(brandId), any(LocalDateTime.class))).thenReturn(priceDto);
+        when(priceService.find(eq(productId), eq(brandId), any(LocalDateTime.class)))
+                .thenReturn(Optional.of(priceDto));
 
         mockMvc.perform(get(PRICES_PATH)
                         .param(PRODUCT_QUERY_PARAM, productId.toString())

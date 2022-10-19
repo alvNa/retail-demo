@@ -37,7 +37,7 @@ public class PriceController {
                                                @RequestParam(value= BRAND_QUERY_PARAM) @NotNull Long brandId,
                                                @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
                                                @RequestParam(value = DATE_QUERY_PARAM) LocalDateTime date) {
-        PriceDto price = priceService.find(productId, brandId, date);
-        return ResponseEntity.ok(price);
+        return priceService.find(productId, brandId, date).map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
